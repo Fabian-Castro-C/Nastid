@@ -9,7 +9,10 @@ class RootPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: const Text('Nastid'),
+        title: const Text(
+          'Nastid',
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
       ),
       body: Center(
         child: Column(
@@ -27,7 +30,7 @@ class RootPage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => MainPage()),
                 );
               },
-              child: const Text('Import File'),
+              child: const Text('Open Folder'),
             ),
           ],
         ),
