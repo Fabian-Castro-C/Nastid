@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './ImageList.dart';
-import './ImageSection.dart';
+import 'ImageList.dart';
+import 'ImageSection.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -42,7 +42,7 @@ class _MainPageState extends State<MainPage> {
               },
             ),
           ),
-          Expanded(
+          const Expanded(
             flex: 1,
             child: ImageList(),
           ),

@@ -7,8 +7,8 @@ class Image3 extends StatelessWidget {
   const Image3({
     required this.thresholdValue,
     required this.onThresholdValueChanged,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class Image3 extends StatelessWidget {
           label: 'Threshold = $thresholdValue',
           onChanged: onThresholdValueChanged,
         ),
-        Text('Imagen 3'),
+        const Text('Imagen 3'),
         // Aquí irá la lógica para mostrar la Imagen 3
       ],
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import './Image1.dart';
-import './Image2.dart';
-import './Image3.dart';
+import 'Image1.dart';
+import 'Image2.dart';
+import 'Image3.dart';
 
 class ImageSection extends StatelessWidget {
   final double mValue;
@@ -14,8 +14,8 @@ class ImageSection extends StatelessWidget {
     required this.thresholdValue,
     required this.onMValueChanged,
     required this.onThresholdValueChanged,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class ImageSection extends StatelessWidget {
         Expanded(
           child: Row(
             children: [
-              Expanded(child: Image1()),
+              const Expanded(child: Image1()),
               Expanded(
                 child: Image2(
                   mValue: mValue,

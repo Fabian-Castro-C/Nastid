@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './MainPage.dart';
+import '../MainPage/MainPage.dart';
 
 class RootPage extends StatelessWidget {
   const RootPage({super.key});
@@ -27,7 +27,7 @@ class RootPage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MainPage()),
+                  MaterialPageRoute(builder: (context) => const MainPage()),
                 );
               },
               child: const Text('Open Folder'),

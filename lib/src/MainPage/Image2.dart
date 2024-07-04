@@ -7,8 +7,8 @@ class Image2 extends StatelessWidget {
   const Image2({
     required this.mValue,
     required this.onMValueChanged,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class Image2 extends StatelessWidget {
           label: 'm = $mValue',
           onChanged: onMValueChanged,
         ),
-        Text('Imagen 2'),
+        const Text('Imagen 2'),
         // Aquí irá la lógica para mostrar la Imagen 2
       ],
     );
