@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './presentation/screens/screens.dart';
 import './presentation/theme/light_theme/light_theme.dart';
+import './config/router/router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,10 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Nastid',
       theme: lightTheme,
-      home: const Home(),
+      routerConfig: appRouter,
     );
   }
 }
