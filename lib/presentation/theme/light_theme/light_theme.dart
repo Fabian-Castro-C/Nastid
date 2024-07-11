@@ -21,5 +21,8 @@ final ThemeData lightTheme = ThemeData(
 
   // Define TextTheme
   textTheme: lightTextTheme,
+
+  // Define FontFamily
+  fontFamily: 'Roboto',
   
 );

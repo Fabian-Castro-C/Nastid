@@ -6,15 +6,16 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center( // Envuelve la Column con un widget Center
+    return Center( // Envuelve la Column con un widget Center
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Título',
+            'Bienvenido a Nastid',
+            style: Theme.of(context).textTheme.headlineLarge,
           ),
-          SizedBox(height: 16),
-          ImportFolderButton(),
+          const SizedBox(height: 16),
+          const ImportFolderButton(),
         ],
       ),
     );
