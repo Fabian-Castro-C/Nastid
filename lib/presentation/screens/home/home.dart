@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './body.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -9,9 +10,7 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Nastid'),
       ),
-      body: const Center(
-        child: Text('Nastid'),
-      ),
+      body: const HomeBody(),
     );
   }
 }
