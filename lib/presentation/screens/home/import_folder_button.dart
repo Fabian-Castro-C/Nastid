@@ -9,7 +9,7 @@ class ImportFolderButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: () async {
         final result = await getDirectoryPath();
-        print('Hola');
+        print('Directorio seleccionado: $result');
       },
       child: const Text('Abrir Carpeta'),
     );
