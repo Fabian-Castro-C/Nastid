@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import './import_folder_button.dart';
 
 class HomeBody extends StatelessWidget {
@@ -12,7 +13,11 @@ class HomeBody extends StatelessWidget {
         children: [
           Text(
             'Bienvenido a Nastid',
-            style: Theme.of(context).textTheme.headlineLarge,
+            style: GoogleFonts.orbitron(
+              fontSize: 32,
+              fontWeight: FontWeight.bold,
+            )
+            
           ),
           const SizedBox(height: 16),
           const ImportFolderButton(),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './light_text_theme.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 // Define light theme
 final ThemeData lightTheme = ThemeData(
@@ -22,7 +23,9 @@ final ThemeData lightTheme = ThemeData(
   // Define TextTheme
   textTheme: lightTextTheme,
 
+  // Se usa tema de google
+
   // Define FontFamily
-  fontFamily: 'Roboto',
-  
+  fontFamily: GoogleFonts.roboto().fontFamily,
+
 );
