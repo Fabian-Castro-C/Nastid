@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './presentation/screens/screens.dart';
-//import './presentation/theme/theme.dart';
+import './presentation/theme/light_theme/light_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,9 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Nastid',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: lightTheme,
       home: const Home(),
     );
   }
