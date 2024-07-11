@@ -12,7 +12,11 @@ final appRouter = GoRouter(
 
     GoRoute(
       path: '/identifier',
-      builder : (context, state) => const IdentifierScreen(),
+      builder : (context, state) {
+        // Se extrae el path de la carpeta de imágenes
+        final pathImagesFolder = state.extra as String;
+        return IdentifierScreen(pathImagesFolder: pathImagesFolder);
+      },
     ),
     
   ],

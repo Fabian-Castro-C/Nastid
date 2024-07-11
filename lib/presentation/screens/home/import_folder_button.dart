@@ -10,9 +10,9 @@ class ImportFolderButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: () async {
         try {
-          final result = await getDirectoryPath();
-          if (result != null) {
-            GoRouter.of(context).go('/identifier');
+          final pathImagesFolder = await getDirectoryPath();
+          if (pathImagesFolder != null) {
+            GoRouter.of(context).go('/identifier', extra: pathImagesFolder);
           }
         } catch (e) {
           // Manejar el error aquí. Por ejemplo, mostrando un snackbar con el mensaje de error.
