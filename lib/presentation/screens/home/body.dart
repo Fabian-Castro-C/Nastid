@@ -20,7 +20,7 @@ class HomeBody extends StatelessWidget {
             
           ),
           const SizedBox(height: 16),
-          const ImportFolderButton(),
+          ImportFolderButton(),
         ],
       ),
     );
