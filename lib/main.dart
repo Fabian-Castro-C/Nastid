@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import './presentation/blocs/blocs.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const BlocsProviders());
 }
 
 class BlocsProviders extends StatelessWidget{ 

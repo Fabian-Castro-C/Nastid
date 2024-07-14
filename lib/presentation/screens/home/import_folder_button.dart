@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:file_selector/file_selector.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nastid/presentation/blocs/blocs.dart';
 
 class ImportFolderButton extends StatelessWidget {
   const ImportFolderButton({super.key});
@@ -12,7 +14,8 @@ class ImportFolderButton extends StatelessWidget {
         try {
           final pathImagesFolder = await getDirectoryPath();
           if (pathImagesFolder != null) {
-            GoRouter.of(context).go('/identifier', extra: pathImagesFolder);
+            context.read<PathImagesFolderCubit>().setPathFolder(pathImagesFolder);
+            GoRouter.of(context).go('/identifier');
           }
         } catch (e) {
           // Manejar el error aquí. Por ejemplo, mostrando un snackbar con el mensaje de error.
