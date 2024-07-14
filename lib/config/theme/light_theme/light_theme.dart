@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './light_text_theme.dart';
+import 'light_text_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 // Define light theme
