@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart'; // Import the library that defines 'read'
 import 'package:nastid/presentation/blocs/identifier/path_folder_images_cubit.dart';
 import 'package:nastid/presentation/screens/identifier/change_folder_button.dart';
-import 'change_folder_button.dart';
 
 class IdentifierScreen extends StatefulWidget {
   const IdentifierScreen({super.key});
