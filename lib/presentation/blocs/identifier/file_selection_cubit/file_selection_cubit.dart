@@ -17,6 +17,7 @@ class FileSelectionCubit extends Cubit<FileSelectionState> {
   }
 
   void selectFile(ImageFileModel file) {
-    emit(FileSelectionState(imagesPathFolder: state.imagesPathFolder ,files: state.files, selectedFile: file));
+    emit(FileSelectionState(imagesPathFolder: state.imagesPathFolder ,
+                            files: state.files, selectedFile: file));
   }
 }
