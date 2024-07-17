@@ -18,6 +18,9 @@ class BlocsProviders extends StatelessWidget{
         BlocProvider(
           create: (context) => PathImagesFolderCubit(),
         ),
+        BlocProvider(
+          create: (context) => FileSelectionCubit(),
+        ),
       ],
       child: const MyApp(),
     );

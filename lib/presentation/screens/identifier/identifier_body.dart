@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nastid/presentation/screens/identifier/file_selector_list.dart';
 
 class IdentifierBody extends StatelessWidget {
   const IdentifierBody({super.key});
@@ -15,7 +16,7 @@ class IdentifierBody extends StatelessWidget {
           SizedBox(width: 10),
           Text('Image3'),
           SizedBox(width: 10),
-          Text('FileSelector'),
+          FileSelectorList(),
         ],
       ),
     );

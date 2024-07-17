@@ -5,7 +5,7 @@ class FileSelectionState extends Equatable {
   final List<ImageFileModel> files;
   final ImageFileModel? selectedFile;
 
-  FileSelectionState({required this.files, this.selectedFile});
+  const FileSelectionState({required this.files, this.selectedFile});
 
   @override
   List<Object?> get props => [files, selectedFile];

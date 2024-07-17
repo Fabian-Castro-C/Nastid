@@ -17,15 +17,19 @@ class ChangeFolderButton extends StatelessWidget {
         try {
           final pathImagesFolder = await getDirectoryPath();
           if (pathImagesFolder != null) {
-            context.read<PathImagesFolderCubit>().setPathFolder(pathImagesFolder);
+            if (context.mounted) {
+              context.read<PathImagesFolderCubit>().setPathFolder(pathImagesFolder);
+            }
           }
         } catch (e) {
           // Manejar el error aquí. Por ejemplo, mostrando un snackbar con el mensaje de error.
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text('Ocurrió un error al seleccionar la carpeta: $e'),
-            ),
-          );
+          if (context.mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Ocurrió un error al seleccionar la carpeta: $e'),
+              ),
+            );
+          }
         }
       },
       child: const Text('Cambiar Carpeta'),

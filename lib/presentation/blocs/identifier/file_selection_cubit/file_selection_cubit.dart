@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:nastid/config/utils/models.dart';
 
 class FileSelectionCubit extends Cubit<FileSelectionState> {
-  FileSelectionCubit() : super(FileSelectionState(files: []));
+  FileSelectionCubit() : super(const FileSelectionState(files: []));
 
   void setFolderPath(String path) {
     final directory = Directory(path);
