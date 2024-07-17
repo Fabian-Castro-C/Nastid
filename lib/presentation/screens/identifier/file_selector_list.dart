@@ -21,6 +21,8 @@ class _FileSelectorListState extends State<FileSelectorList> {
       builder: (context, state) {
         final List<ImageFileModel> imageFiles =
             context.watch<FileSelectionCubit>().state.files;
+        
+        imageFiles.sort((a, b) => a.name.compareTo(b.name));
 
         return Container(
           height: MediaQuery.of(context).size.height/1.5, // Define la altura del cuadrado
