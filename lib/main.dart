@@ -16,9 +16,6 @@ class BlocsProviders extends StatelessWidget{
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => PathImagesFolderCubit(),
-        ),
-        BlocProvider(
           create: (context) => FileSelectionCubit(),
         ),
       ],

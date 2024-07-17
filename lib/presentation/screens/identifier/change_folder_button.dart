@@ -18,7 +18,7 @@ class ChangeFolderButton extends StatelessWidget {
           final pathImagesFolder = await getDirectoryPath();
           if (pathImagesFolder != null) {
             if (context.mounted) {
-              context.read<PathImagesFolderCubit>().setPathFolder(pathImagesFolder);
+              context.read<FileSelectionCubit>().setFolderPath(pathImagesFolder);
             }
           }
         } catch (e) {

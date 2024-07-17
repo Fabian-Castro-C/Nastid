@@ -17,7 +17,7 @@ class _FileSelectorListState extends State<FileSelectorList> {
     return BlocBuilder<FileSelectionCubit, FileSelectionState>(
       builder: (context, state) {
 
-        final pathImagesFolder = context.watch<PathImagesFolderCubit>().state;
+        final pathImagesFolder = context.watch<FileSelectionCubit>().state.imagesPathFolder;
 
         return Text(pathImagesFolder);
       },

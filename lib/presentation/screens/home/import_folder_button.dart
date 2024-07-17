@@ -12,10 +12,10 @@ class ImportFolderButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: () async {
         try {
-          final pathImagesFolder = await getDirectoryPath();
-          if (pathImagesFolder != null) {
+          final imageFolderPath = await getDirectoryPath();
+          if (imageFolderPath != null) {
             if (context.mounted) {
-              context.read<PathImagesFolderCubit>().setPathFolder(pathImagesFolder);
+              context.read<FileSelectionCubit>().setFolderPath(imageFolderPath);
               GoRouter.of(context).go('/identifier');
             }
           }
