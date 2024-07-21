@@ -9,7 +9,7 @@ import './domain/matrix_api_service.dart';
 
 void main() {
   final MatrixRepository repository = MatrixRepository(
-    apiService: MatrixApiService(baseUrl: 'http://127.0.0.1:8000/'),
+    apiService: MatrixApiService(baseUrl: 'http://127.0.0.1:8000'),
   );
 
   runApp(BlocsProviders(repository: repository,));

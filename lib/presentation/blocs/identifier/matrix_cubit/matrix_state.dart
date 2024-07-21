@@ -12,7 +12,7 @@ class MatrixInitial extends MatrixState {}
 class MatrixLoading extends MatrixState {}
 
 class MatrixLoaded extends MatrixState {
-  final List<List<int>> matrix;
+  final List<List<double>> matrix;
 
   const MatrixLoaded(this.matrix);
 

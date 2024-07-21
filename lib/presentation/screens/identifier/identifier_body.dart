@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nastid/presentation/screens/identifier/file_selector_list.dart';
+import './matrix_to_image.dart';
 
 class IdentifierBody extends StatelessWidget {
   const IdentifierBody({super.key});
@@ -10,7 +11,7 @@ class IdentifierBody extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Image1'),
+          MatrixImageWidget(),
           SizedBox(width: 10), // Agrega espacio entre los elementos
           Text('Image2'),
           SizedBox(width: 10),

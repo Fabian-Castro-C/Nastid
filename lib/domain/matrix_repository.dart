@@ -5,7 +5,7 @@ class MatrixRepository {
 
   MatrixRepository({required this.apiService});
 
-  Future<List<List<int>>> getMatrix() async {
+  Future<List<List<double>>> getMatrix() async {
     return await apiService.fetchMatrix();
   }
 }
