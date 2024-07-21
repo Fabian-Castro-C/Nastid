@@ -44,6 +44,8 @@ dependencies:
   go_router: ^14.2.0
   equatable: ^2.0.5
   syncfusion_flutter_charts: ^26.1.42
+  http: ^1.2.2
+
 
 dev_dependencies:
   flutter_test:
