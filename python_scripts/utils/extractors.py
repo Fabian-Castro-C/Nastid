@@ -3,7 +3,7 @@ import os.path
 import numpy as np
 from igor2.binarywave import load as loadibw
 
-import util as util
+from . import util
 
 
 def ibw2dict(filename):
