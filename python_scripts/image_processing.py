@@ -42,5 +42,5 @@ def process_image(name: str, file_path: str) -> ImageFile:
     # Convert the image data to a dictionary
     imageFile = ImageFile(name, file_path, HeightRetrace, AmplitudeRetrace, 
                            xres, yres, stepsize)
-    imageFile.calculateDistributionFunction()
+    imageFile.calculateDistributionFunction(bins = 128)
     return imageFile

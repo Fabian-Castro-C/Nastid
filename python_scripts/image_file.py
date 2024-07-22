@@ -55,7 +55,7 @@ class ImageFile:
         }
         return image_data
 
-    def calculateDistributionFunction(self):
+    def calculateDistributionFunction(self, bins: int = 256) -> None:
         """Calculates the distribution function for the HeightRetrace and 
         AmplitudeRetrace arrays.
 
@@ -78,7 +78,7 @@ class ImageFile:
                 / (np.max(self.HeightRetrace) - np.min(self.HeightRetrace)))
         )
         self.distribution_function_HeightRetrace = (
-            mx.probability_matrix(normalized_matrix)
+            mx.probability_matrix(normalized_matrix, bins)
         )
 
         # AmplitudeRetrace

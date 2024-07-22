@@ -46,3 +46,31 @@ def random_matrix() -> dict:
     buf.seek(0)
 
     return StreamingResponse(buf, media_type="image/png")
+
+@app.get("/entropy/")
+def entropy(file_path: str, m: int = 1, HeightRetrace: bool = True) -> StreamingResponse:
+
+    processImage = ip.process_image(name="MCu30004",file_path=file_path)
+    matrix = processImage.calculateComulativeEntropyMatrix(m, HeightRetrace)
+
+    stepsize = processImage.stepsize
+    xres = processImage.xres
+    yres = processImage.yres
+
+    extent = [0, xres*stepsize, 0, yres*stepsize]
+
+    # Convertir matriz a imagen
+    fig, ax = plt.subplots(figsize=(20, 20), dpi=80)
+    cax = ax.imshow(matrix, cmap='hot', extent=extent)
+    ax.set_xlabel('X [m]')
+    ax.set_ylabel('Y [m]')
+
+    # Añadir la barra de color
+    fig.colorbar(cax, ax=ax)
+
+    # Guardar la imagen en un buffer de bytes
+    buf = BytesIO()
+    plt.savefig(buf, format='png', bbox_inches='tight', pad_inches=0, transparent=True)
+    buf.seek(0)
+
+    return StreamingResponse(buf, media_type="image/png")
