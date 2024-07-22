@@ -8,35 +8,13 @@ from skimage.measure import regionprops
 from skimage.registration import phase_cross_correlation
 import numpy as np
 import matplotlib.pyplot as plt
+from image_file import ImageFile
 
-def image_data_to_dict(HeightRetrace: np.ndarray, AmplitudeRetrace: np.ndarray, 
-                       xres: int, yres: int, stepsize: float) -> dict:
-    """Converts image data to a dictionary.
-
-    Args:
-        HeightRetrace (np.ndarray): The height retrace data of the image.
-        AmplitudeRetrace (np.ndarray): The amplitude retrace data of the image.
-        xres (int): The resolution of the image in the x-axis.
-        yres (int): The resolution of the image in the y-axis.
-        stepsize (float): The step size of the image.
-
-    Returns:
-        dict: A dictionary containing the processed image data.
-    """
-    image_data = {
-        "HeightRetrace": HeightRetrace,
-        "AmplitudeRetrace": AmplitudeRetrace,
-        "xres": xres,
-        "yres": yres,
-        "stepsize": stepsize
-    }
-
-    return image_data
-
-def process_image(file_path: str) -> dict:
+def process_image(name: str, file_path: str) -> ImageFile:
     """Process an AFM image in .ibw format.
 
     Args:
+        name (str): Name of the image.
         file_path (str): Path to the .ibw file.
 
     Returns:
@@ -62,5 +40,7 @@ def process_image(file_path: str) -> dict:
     AmplitudeRetrace = spiepy.flatten_by_iterate_mask(AmplitudeRetrace)[0]
 
     # Convert the image data to a dictionary
-    image_data = image_data_to_dict(HeightRetrace, AmplitudeRetrace, xres, yres, stepsize)
-    return image_data
+    imageFile = ImageFile(name, file_path, HeightRetrace, AmplitudeRetrace, 
+                           xres, yres, stepsize)
+    imageFile.calculateDistributionFunction()
+    return imageFile

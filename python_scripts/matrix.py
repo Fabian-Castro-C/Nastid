@@ -11,6 +11,10 @@ def plot_matrix(matrix):
     plt.colorbar()
     plt.show()
 
+def normalize_matrix(matrix):
+    normalized_matrix = np.copy((matrix - np.min(matrix)) / (np.max(matrix) - np.min(matrix)))
+    return normalized_matrix
+
 
 def probability_matrix(matrix, bins=256):
     '''Return the probability distribution function of the intensity values in the input matrix'''
@@ -51,18 +55,13 @@ def entropy_matrix(matrix, m, bins=256):
             result[i, j] = calculate_entropy(submatrix, probabilities, bins)
     return result
 
-def recursive_entropy_matrix(matrix, m, bins=256):
+def recursive_entropy_matrix(matrix, m, probability_distribution):
     '''Calculate the entropy of each m x m submatrix of the input matrix using a recursive approach'''
     n = matrix.shape[0]
     S = np.zeros((n, n))
     F = np.zeros(n)
 
-    # Normalize the matrix to [0, 1]
-    normalized_matrix = np.copy((matrix - np.min(matrix)) / (np.max(matrix) - np.min(matrix)))
-
-    # Calculate the probability distribution of the input matrix
-    probabilities = probability_matrix(normalized_matrix, bins)
-    prob_matrix = probabilities(normalized_matrix)
+    prob_matrix = probability_distribution(matrix)
     entropy_local = -prob_matrix * np.log2(prob_matrix+1e-10)
 
     # Completamos la primera columna
