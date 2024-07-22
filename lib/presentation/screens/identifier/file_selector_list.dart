@@ -23,8 +23,8 @@ class _FileSelectorListState extends State<FileSelectorList> {
         imageFiles.sort((a, b) => a.name.compareTo(b.name));
 
         return Container(
-          height: MediaQuery.of(context).size.height/1.5, // Define la altura del cuadrado
-          width: MediaQuery.of(context).size.width/4, // Define la anchura del cuadrado
+          height: MediaQuery.of(context).size.height/1.2, // Define la altura del cuadrado
+          width: MediaQuery.of(context).size.width/6, // Define la anchura del cuadrado
           child: ListView.builder(
             itemCount: imageFiles.length,
             itemBuilder: (context, index) {

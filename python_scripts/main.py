@@ -25,7 +25,7 @@ def random_matrix() -> dict:
 
     # Convertir matriz a imagen
     fig, ax = plt.subplots(figsize=(5, 5), dpi=80)
-    ax.imshow(matrix, cmap='gray')
+    ax.imshow(matrix, cmap='hot')
     ax.axis('off')  # Ocultar los ejes
 
     # Guardar la imagen en un buffer de bytes

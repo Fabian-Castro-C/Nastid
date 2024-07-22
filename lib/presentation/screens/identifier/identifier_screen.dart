@@ -18,7 +18,7 @@ class IdentifierScreen extends StatelessWidget {
           ],
         ),
       ),
-      body: const IdentifierBody(), // Muestra el path en pantalla
+      body: const IdentifierBody(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'dart:typed_data';
 
 abstract class MatrixState extends Equatable {
   const MatrixState();
@@ -12,19 +13,11 @@ class MatrixInitial extends MatrixState {}
 class MatrixLoading extends MatrixState {}
 
 class MatrixLoaded extends MatrixState {
-  final List<List<double>> matrix;
-
-  const MatrixLoaded(this.matrix);
-
-  @override
-  List<Object> get props => [matrix];
+  final Uint8List imageBytes;
+  const MatrixLoaded(this.imageBytes);
 }
 
 class MatrixError extends MatrixState {
   final String message;
-
   const MatrixError(this.message);
-
-  @override
-  List<Object> get props => [message];
 }
